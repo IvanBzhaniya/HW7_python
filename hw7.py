@@ -6,19 +6,33 @@
 # и “Пам парам”, если с ритмом все не в порядке
 
 
-def rhythm(str):
-    str = str.split()
-    list = []
-    for word in str:
-        result = 0
-        for i in word:
-            if i in 'аеёиоуыэюя':
-                result += 1
-        list.append(result)
-    return len(list) == list.count(list[0])
+# def rhythm(str):
+#     str = str.split()
+#     list = []
+#     for word in str:
+#         result = 0
+#         for i in word:
+#             if i in 'аеёиоуыэюя':
+#                 result += 1
+#         list.append(result)
+#     return len(list) == list.count(list[0])
 
-str = input('input: ')
-if rhythm(str):
-    print('Парам пам-пам')
-else:
-    print('Пам парам')
+# str = input('input: ')
+# if rhythm(str):
+#     print('Парам пам-пам')
+# else:
+#     print('Пам парам')
+
+
+# Напишите функцию print_operation_table(operation, num_rows=6, num_columns=6), 
+# которая принимает в качестве аргумента функцию, вычисляющую элемент по номеру строки и столбца. 
+# Аргументы num_rows и num_columns указывают число строк и столбцов таблицы, которые должны быть распечатаны. 
+# Нумерация строк и столбцов идет с единицы (подумайте, почему не с нуля).
+
+
+def print_operation_table(operation, num_rows=6, num_columns=6):
+    for row in range(1, num_rows+1):
+        for column in range(1, num_columns+1):
+            print(operation(row,column), end='\t')
+        print()
+print_operation_table(lambda x, y: x * y)
